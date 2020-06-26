@@ -5,9 +5,10 @@ var formidable = require('formidable');
 var Promise = require("bluebird");
 Promise.promisifyAll(fs);
 
+var files = process.argv[2]
 var fields = {
   "modelType": "gbccFlat",
-  "nLogoFilename1": "RC\ Cola.nlogo",
+  "nLogoFilename1": files,
   "legacyHubnet": false,
   "allowTabs": false,
   "allowMultipleLayers": false,
@@ -17,7 +18,6 @@ var fields = {
   "allowTeacherControls": false,
   "allowMirrorControls": false
 }
-var files = "RC\ Cola.nlogo"
 
 var activityType = fields['modelType'];
 
